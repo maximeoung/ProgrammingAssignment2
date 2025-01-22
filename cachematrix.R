@@ -26,7 +26,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## function 'cacheSolve', when provided a cached matrix created with function 'makeCacheMatrix', will calculate the inverse of the matrix, if it hasn't been calculated already.
 ## Else, it will get the inverse matrix that has already been calculated.
-## assume that the matrix supplied is always invertible.
+## We assume 
 cacheSolve <- function(x) {
 	## get the 'getinverse' method of cached matrix
 	i <- x$getinverse()
@@ -45,15 +45,15 @@ cacheSolve <- function(x) {
 }
 
 
-## verifying functions :
-## initialize square matrix  of random integers
-random_matrix <- matrix(round(runif(n=100, min=0, max=9),0), nrow=10)
+#### verifying functions :
+#### initialize square matrix  of random integers
+## random_matrix <- matrix(round(runif(n=100, min=0, max=9),0), nrow=10)
 
-## store matrix in cache
-cache_matrix<-makeCacheMatrix(random_matrix)
+#### store matrix in cache
+## cache_matrix<-makeCacheMatrix(random_matrix)
 
-## call inverse function on cache matrix
-cacheSolve(cache_matrix)
+#### call inverse function on cache matrix
+## cacheSolve(cache_matrix)
 
-## Calling twice to see if message is prompted
-cacheSolve(cache_matrix)
+#### Calling twice to see if message is prompted
+## cacheSolve(cache_matrix)
